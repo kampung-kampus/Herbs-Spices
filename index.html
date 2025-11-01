@@ -1,9 +1,4 @@
-
-
- 
-
-
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,6 +12,7 @@
     <meta property="og:description" content="Explore herbs & spices at GUI Kampung Kampus. Discover benefits, uses, and wellness tips.">  
     <meta property="og:title" content="Herbs and Spices at GUI Kampung Kampus - Benefits and Culinary Uses">
     <meta name="twitter:card" content="summary_large_image">
+    
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -33,692 +29,759 @@
         }
     }
     </script>
- 
-    <!--The following add Bootstrap to the source code -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-     
-    <!-- The following add a Bootstrap Magnifying glass icon to the search box -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* General styles */
-       /* body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: black; /* Text color for all elements */
-        /* This is the originally style but I am trying out a new style below so
-        that it can fit into a phone display */
+        :root {
+            --primary-green: #2d5016;
+            --secondary-green: #4a7c2a;
+            --accent-green: #6b9f3d;
+            --light-green: #e8f5e3;
+            --earth-brown: #8b6f47;
+            --warm-beige: #f5f1eb;
+            --cream: #faf8f5;
+            --text-dark: #2c2c2c;
+            --text-medium: #555;
+            --border-color: #d4d4d4;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+            --transition: all 0.3s ease;
         }
- body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: black;
-    max-width: 100%; /* Ensures content doesn’t overflow */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-}
 
-        
-/* Banner styles */
-.banner
-{
-    background-color:#f22e6d; /* Red background */
-    color: white; /* Text color */
-    width: auto; /* Full-width */
-    height: auto; /* Set height */
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Align text and email */
-    padding: 10px; /* Space inside banner */
-    box-sizing: border-box;
-    font-size: 20px;
-    font-weight: bold;
-}
-/* Adjust the banner style for the search box */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.search-box {
-    display: flex;
-    align-items: center;
-    gap: 5px; /* Space between input and button */
-}
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--cream);
+            line-height: 1.6;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
 
-.search-box input {
-    width: 200px; /* Adjust width */
-    border-radius: 5px;
-}
+        /* Banner Styles */
+        .banner {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
+            color: white;
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
 
-.search-box button {
-    border: none;
-    background-color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
+        .banner-content {
+            flex: 1;
+            min-width: 280px;
+        }
 
-.search-box button i {
-    font-size: 16px;
-    color: black; /* Magnifying glass color */
-}    
-/* this part is from chatgpt */
-.banner-content {
-    flex-grow: 1;
-    max-width: 75%; /* Allow space for search box */
-}
-      
-/* Ensure spacing between banner and header */
-header {
-    margin-top: 10px;
-}
+        .banner-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
 
-        /* Style secondbannerheading on the next line  */
-.secondbannerheading {
-    font-size: 12px; /* Slightly smaller font for email */
-    margin-right: 15px; /* Adjust spacing on the right */
-    }
-    
-/* Style contact email separately */
-.contact {
-    font-size: 10px; /* Slightly smaller font for email */
-    margin-left: 1000px; /* Adjust spacing on the right */
-}
-     /* Header1 styles to add another block of text before the main Header */
+        .secondbannerheading {
+            font-size: 0.875rem;
+            font-weight: 400;
+            opacity: 0.95;
+            line-height: 1.5;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .secondbannerheading a {
+            color: white;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: opacity var(--transition);
+        }
+
+        .secondbannerheading a:hover {
+            opacity: 0.8;
+        }
+
+        .contact {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+            display: block;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 280px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 0.625rem 1rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 6px;
+            background-color: rgba(255,255,255,0.95);
+            color: var(--text-dark);
+            font-size: 0.9375rem;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: white;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.2);
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-medium);
+        }
+
+        .search-box button {
+            padding: 0.625rem 1rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            background-color: rgba(255,255,255,0.95);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-box button:hover {
+            background-color: white;
+            border-color: white;
+            transform: translateY(-1px);
+        }
+
+        .search-box button i {
+            font-size: 1rem;
+            color: var(--primary-green);
+        }
+
+        /* Header1 Styles */
         .header1 {
-            background-color: transparent; /* Yellow header */
+            background-color: var(--light-green);
             text-align: center;
-            padding: 5px;             
-            margin-right: 15px; /* Adjust spacing on the right */
-}
+            padding: 1.5rem 2rem;
+            border-bottom: 2px solid var(--accent-green);
+        }
 
-        /* Header styles */
+        .header1 p {
+            color: var(--primary-green);
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Header Styles */
         header {
-            background-color: transparent; /* Yellow header */
-            text-align: center;
-            padding: 5px;
-        }            
-           
-       /* header img {
-            width:100%;
-            height:auto;
-            margin-top: 5px; /* Adjust spacing above */
-           /* max-height: 300px; /* Limits the height to prevent it from being too big */
-   /* object-fit: contain; /* Ensures the image fits within the given space */
-   /*     } */
+            background-color: transparent;
+            position: relative;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
 
         header img {
-    width: 100%;
-    height: 300px;
-    display: block; /* Removes unwanted spaces */
-}
-.image-container {
-    position: relative; /* Ensures absolute positioning works inside */
-    display: inline-block;
-    width: 100%; /* Keeps the image-container width consistent */
-}
- /* Animation for Header Text: <h1 class="overlay-text">No Entry to GUI as the area is under construction</h1> */
-        
-      .overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: lightgreen;
-    font-size: 50px;
-    font-weight: bold;
-    background: none;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    width: 100%;
-    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
-    
-    /* Animation properties */
-    opacity: 1;
-    animation: 
-        appear 20s linear,
-        flash 0.5s linear 8s 7, /* flashes 4 times (2 seconds total) */
-        fadeOut 1s linear 20s forwards;
-}
-  
-@keyframes appear {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes flash {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
-      
-  
-      
-        /* Navigation styles */
-        nav {
-            background-color: lightblue; /* Light blue navigation */
-            float: left; /* Align nav to the left */
-            width: 35%; /* Occupies 1/4 of the page width */
-            height: calc(1110vh - 60px); /*extended from 100vh to 500vh 
-            so it can cover more of the scrollable page ,  minus header */
-            padding: 20px;
-            box-sizing: border-box;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
         }
-         /* These codes are for adjusting the font size of the clickable content */
-        nav  a {
-    font-size: 20px; /* Adjust the size as needed */
-    font-weight: bold; /* Optional for emphasis */
-    color: blue; /* Optional: Set link color */
-    text-decoration: none; /* Optional: Remove underline */
-}
 
-        /* Section styles */
-        section {
-            background-color: lightgreen; /* Light green section */
-            float: right; /* Allow it to sit beside the nav */
-            width: 65%; /* Occupies 3/4 of the page width */
-            height: calc(1110vh - 60px); /* extended from 100vh to 500vh 
-            so it can cover more of the scrollable page ,  minus header */
-            box-sizing: border-box;
-            padding: 20px;
-        }
-        /*Just added*/
-         /* These codes are for adjusting the font size of the clickable content */
-        article h2 a {
-    font-size: 20px; /* Adjust the size as needed */
-    font-weight: bold; /* Optional for emphasis */
-    color: blue; /* Optional: Set link color */
-    text-decoration: none; /* Optional: Remove underline */
-}
-
-        /* Article box styles */
-        article {
-            background-color:transparent; /* Light red article boxes */
-            margin-bottom: 20px;
-            padding: 20px;
-            box-sizing: border-box;
-            border-radius: 5px;
-        }
- /* Button box styles */
-      
-           /* button {
-            background-color:red; /* Light red article boxes */
-            /*margin-bottom: 20px;
-            padding: 10px;
-            box-sizing: border-box;
-            color:white;
-            border-radius: 5px;
-}
-button:hover {
-  background-color:yellow; /* Orange on hover */
-}
-        
-
-        /* Footer styles */
-        footer {
-            background-color:green; /* Matches header */
-            clear: both; /* Ensures footer starts on a new line */
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #90ee90;
+            font-size: clamp(1.5rem, 4vw, 3.125rem);
+            font-weight: 700;
+            background: rgba(0,0,0,0.4);
+            padding: 1rem 2rem;
+            border-radius: 8px;
             text-align: center;
-            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+            opacity: 1;
+            animation: 
+                appear 20s linear,
+                flash 0.5s linear 8s 7,
+                fadeOut 1s linear 20s forwards;
+        }
+
+        @keyframes appear {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes flash {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* Main Container */
+        .main-container {
+            display: flex;
+            min-height: calc(100vh - 400px);
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: var(--warm-beige);
+            width: 100%;
+            max-width: 400px;
+            padding: 2rem;
+            border-right: 1px solid var(--border-color);
+            overflow-y: auto;
+            max-height: calc(100vh - 400px);
+            position: sticky;
+            top: 0;
+            align-self: flex-start;
+        }
+
+        nav .image-container {
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        nav .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        nav > p:first-of-type {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-green);
+        }
+
+        nav p {
+            margin-bottom: 0.75rem;
+        }
+
+        nav a {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--secondary-green);
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.375rem 0;
+            transition: var(--transition);
+            border-bottom: 1px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--primary-green);
+            border-bottom-color: var(--accent-green);
+            transform: translateX(4px);
+        }
+
+        /* Section Styles */
+        section {
+            flex: 1;
+            background-color: var(--light-green);
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        article {
+            background-color: white;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        article:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        article .image-container {
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        article .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        article > p:first-of-type {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-green);
+        }
+
+        article h2 {
+            margin-bottom: 1rem;
+        }
+
+        article h2 a {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--secondary-green);
+            text-decoration: none;
+            display: inline-block;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        article h2 a:hover {
+            color: var(--primary-green);
+            transform: translateX(4px);
+        }
+
+        section > p:last-child {
+            color: #c53030;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #fee;
+            border-left: 4px solid #c53030;
+            border-radius: 4px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--primary-green);
+            color: white;
+            clear: both;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-container {
+                flex-direction: column;
+            }
+
+            nav {
+                max-width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                max-height: 400px;
+                position: relative;
+            }
+
+            section {
+                width: 100%;
+            }
+
+            .banner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .banner {
+                padding: 1rem;
+            }
+
+            .banner-text {
+                font-size: 1.125rem;
+            }
+
+            .header1 {
+                padding: 1rem;
+            }
+
+            nav, section {
+                padding: 1.5rem;
+            }
+
+            article {
+                padding: 1.5rem;
+            }
+
+            .overlay-text {
+                font-size: 1.25rem;
+                padding: 0.75rem 1rem;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus Styles for Accessibility */
+        a:focus,
+        button:focus,
+        input:focus {
+            outline: 2px solid var(--accent-green);
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
-     <!-- Banner -->
-    <!--<div class="banner">
-         <span class="banner-text">Herbs and spices at a little corner in Yishun<br>
-        <!-- Style secondbannerheading on the next line -->
-        <!--<span class="secondbannerheading">Information on herbs and spices grown at GUI Kampung Kampus, <br>
-            Complete information on all GUI's activities is available here: https://groundupinitiative.org/  </span><br>
-             
-        <span class="contact">Contact: involve@groundupinitiative.org</span>
-    </div> -->
-<!--replace by chatgpt */
-<div class="banner">
-    <span class="banner-text">Herbs and spices at a little corner in Yishun<br>
-    <span class="secondbannerheading">
-        Information on herbs and spices grown at GUI Kampung Kampus,<br>
-        Complete information on all GUI's activities is available here: 
-        <a href="https://groundupinitiative.org/" style="color: white;">Visit GUI</a>
-    </span>
+    <!-- Banner -->
+    <div class="banner">
+        <div class="banner-content">
+            <span class="banner-text">
+                Herbs and spices at a little corner in Yishun<br>
+                <span class="secondbannerheading">
+                    Information on herbs and spices grown at Ground-up Initiative GUI Kampung Kampus,<br>
+                    Complete information on all GUI's activities is available here: 
+                    <a href="https://groundupinitiative.org/">Visit Ground-up Initiative </a>
+                </span><br>
+                <span class="contact">Contact: involve@groundupinitiative.org</span>
+            </div>
+        </div>
 
-        
-            <div class="search-box">
-    <input type="text" id="search-input" placeholder="Search...">
-    <button id="search-button"><i class="bi bi-search"></i></button>
-</div>
-   -->     
-<div class="banner">
-    <div class="banner-content">
-        <span class="banner-text">
-            Herbs and spices at a little corner in Yishun<br>
-            <span class="secondbannerheading">
-                Information on herbs and spices grown at Ground-up Initiative GUI Kampung Kampus,<br>
-                Complete information on all GUI's activities is available here: 
-                <a href="https://groundupinitiative.org/" style="color: white;">Visit Ground-up Initiative </a>
-            </span><br>
-            <div class="contact">Contact: involve@groundupinitiative.org</span>
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button id="search-button" aria-label="Search"><i class="bi bi-search"></i></button>
         </div>
     </div>
 
-    <div class="search-box">
-        <input type="text" id="search-input" placeholder="Search...">
-        <button id="search-button"><i class="bi bi-search"></i></button>
+    <!-- Header1 -->
+    <div class="header1">
+        <p>Nature is filled with the abundance of good things providing herbs and spices which are not only flavourful but also invigorate and heal us.</p>  
     </div>
- </div>
-
-   <!--  Search box , temporarily removed as it create 2 search boxes and this one cannot search when text is entered 
-    <form class="search-box d-flex">
-        <input class="form-control" type="text" placeholder="Search herbs..." aria-label="Search">
-        <button class="btn btn-light" type="submit"> -->
-    
-   </button>
-    </form> 
-
- <!-- Header1 -->
-   <div class="header1">
-   <p style="color: blue;font-size: 15px; font-weight: bold;">  Nature is filled with the abundance of good things providing herbs and spices
-       which are not only flavourful but also invigorate and heal us. </p>  
-     </div>
-
 
     <!-- Header -->
     <header>
         <div class="image-container">
-       <img src="pond.png" alt="Achiote aka Lipstick Tree">
-        <!-- the welcome heading is temporary disabled and replaced with under construction 
-            <h1 class="overlay-text">Welcome to the herb garden</h1> -->
-             <h1 class="overlay-text">No Entry to GUI as the area is under construction</h1>
-    </div>
+            <img src="pond.png" alt="Achiote aka Lipstick Tree">
+            <h1 class="overlay-text">No Entry to GUI as the area is under construction</h1>
+        </div>
     </header>
- 
-<script>
-    
-    const images = [
-       
-        "docs/herbpath.jpg",
-       
-        "docs/plot.jpg",
-        "docs/germinate.jpg",
-        "docs/toolarea1.jpg",
-        "docs/side path.jpg",
-        "docs/office.jpg",
-        "docs/kitchen.jpg",
-        "docs/gathering.jpg",
-        "docs/drain.jpg",
-         "docs/store 1.png",
-         
-         
+
+    <script>
+        const images = [
+            "docs/herbpath.jpg",
+            "docs/plot.jpg",
+            "docs/germinate.jpg",
+            "docs/toolarea1.jpg",
+            "docs/side path.jpg",
+            "docs/office.jpg",
+            "docs/kitchen.jpg",
+            "docs/gathering.jpg",
+            "docs/drain.jpg",
+            "docs/store 1.png",
+        ];
+
+        let index = 0;
+        function changeImage() {
+            const img = document.querySelector("header img");
+            if (img) {
+                img.src = images[index];
+                index = (index + 1) % images.length;
+            }
+        }
+
+        setInterval(changeImage, 3000);
+        changeImage();
+    </script>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Navigation -->
+        <nav>
+            <div class="image-container">
+                <img src="docs/Jewel of opar.jpg" alt="Jewel of opar">
+            </div>
             
-    ]; // Replace with actual image paths
+            <p style="color: var(--primary-green);font-size: 25px;">Herbs and spices <br>grown in Kampung Kampus</p>
 
-    let index = 0;
-    function changeImage() {
-        document.querySelector("header img").src = images[index];
-        index = (index + 1) % images.length; // Cycle through images
-    }
-
-    setInterval(changeImage, 3000); // Change every 3 seconds
-    changeImage(); // Initial load
-    
-</script>
-    <!-- Navigation -->
-    <nav>
-
-        <div class="image-container">
-        <img src="docs/Jewel of opar.jpg " alt="Jewel of opar">  <!-- this code will allow for a display of the image of the Jewel of opar at   
-                       
-        the nav column -->
-            
-    </div>
-    <!-- color of text font inside html code -->
-         <p style="color: yellow;font-size: 25px;">Herbs and spices <br>grown in Kampung Kampus</p> <!-- Previously it was: <p> Herbs, spices and flora: </p> -->
-
-        
-         <p><a href="docs/achiote.png" target="_blank">Achiote, Lipstick Tree 红木</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/aleo-vera" target="_blank">Aloe Vera 芦荟</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/amazon-blue" target="_blank">Amazon Blue 蓝金花 </a></p>          
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/areca" target="_blank">Areca 散尾葵</a></p>  
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/asian-pigeon-wings" target="_blank">Asian pigeon wings 蝶豆花</a></p>       
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/asian-broom-grass" target="_blank">Asian Broom Grass 蝶豆花</a></p>
-         <p><a href="docs/balloon.png " target="_blank">Balloon Vine 倒地铃</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/balsam" target="_blank">Balsam 凤仙花</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/banana" target="_blank">Banana 香蕉</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/banana" target="_blank">Bandicoot berry /Leea Indica 火筒树</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/barbados-lily" target="_blank">Barbados Lily 鹤顶红</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/basil" target="_blank">Basil 九层塔</a></p>
-      <p><a href="docs/basket plant.png " target="_blank">Basket plant 白纹香锦竹草</a></p>
-         <p><a href="docs/beggarticks.png" target="_blank">Beggarticks 白花鬼针草</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/begonia" target="_blank">Begonia 秋海棠</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/betel-leaves" target="_blank">Betel Leaf 槟榔叶</a></p>
-         <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/south-african-leaf" target="_blank">Bitter Leaf 南非叶</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/black-aralia" target="_blank">Black Aralia 银边南洋参</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/black-face-general" target="_blank">Black face general  黑面将军 </a></p>     
-                  
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/black-turmeric" target="_blank">Black turmeric 黑姜黄</a></p>
-      <p><a href="docs/Bloodleaf.png " target="_blank">Bloodleaf 血苋 </a></p>
-         <p><a href="docs/blue porterweed.png" target="_blank">Blue Porterweed假马鞭</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/blue-pussy-leaf" target="_blank">Blue pussy leaf 瘤子草</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/bourgainvillea" target="_blank">Bougainvillea 九重葛</a></p>
-          <p><a href="docs/buddha new.png " target="_blank">Buddha’s Belly 佛肚树 </a></p>
-          <p><a href="docs/coral.jpg " target="_blank">coral vine 珊瑚藤 </a></p>
-
-     
-           
-     
-          <p><a href="docs/butterfly ginger lily.jpg" target="_blank">Butterfly Ginger Lily 姜/姜花</a></p>
-            
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/candle-bush" target="_blank">Candle Bush 翅果铁刀木</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/cardboard-palm" target="_blank">Cardboard Palm 美叶苏铁</a></p>
-  
-         <p><a href="docs/cashew.png" target="_blank">Cashew 腰果</a></p>
-         <p><a href="docs/cassava.png" target="_blank">Cassava 木薯</a></p>
-         <p><a href="docs/cat whisker.jpg" target="_blank">Cat’s Whiskers Flower 猫薄荷</a></p>
-       <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/celosia" target="_blank">Celosia 蓝金花 </a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/chiku" target="_blank">Chiku Sapodilla 人心果</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/chinese-banyan" target="_blank">Chinese Banyan 细叶榕</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/chinese-chaste-tree" target="_blank">Chinese chaste tree 黄荆</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/chinese-evergreen" target="_blank">Chinese Evergreen 粗肋草</a></p>
-         <p><a href="docs/chinese knotweed.png" target="_blank">Chinese knotweed 何首乌 </a></p> 
-        <p><a href=" "docs/chinese rain bell.jpg"target="_blank">Chinese rain bell 南板蓝根</a></p>
-        <p><a href="docs/chinese violet.jpg" target="_blank">Chinese Violet 宽叶十万错</a></p>   
-      <p><a href="docs/chives.jpg" target="_blank">Chives 韭菜</a></p>
-       
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/citronella" target="_blank">Citronella 亚香茅</a></p>    
-         
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/coffee" target="_blank">Coffee Liberica 大果咖啡</a></p>
-          <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/coleus" target="_blank">Coleus 鞘蕊</a></p
-      <p><a href="docs/colocasia pink china.png" target="_blank">Colocasia pink china 粉红中国芋</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/ulam-raja-" target="_blank">Cosmos, Ulam Raja 帝皇乌蓝 </a></p>
-         <p><a href="docs/crepe ginger flower.jpg " target="_blank">Crepe ginger </a></p>
-         <p><a href="docs/culantro.jpg" target="_blank">Culantro 刺芹</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/curry-tree" target="_blank">Curry Leaves 咖喱叶 </a></p>
-          
-         <p><a href="docs/groundcherry.png" target="_blank">Cutleaf Groundcherry 苦蘵</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/dayak-onion" target="_blank">Dayak Onion 红葱</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/dinner-plate-aralia" target="_blank">Dinner Plate Aralia 圆叶南洋参 </a></p>
-        
-         <p><a href="docs/dog.png" target="_blank">Dog Fennel 假蒿</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/song-of-india-" target="_blank">Dracaena 龙血树</a></p>
-        
-         <p><a href="docs/dumb.png" target="_blank">Dumb Cane 花叶万年青</a></p>
-         <p><a href="docs/canistel.jpg" target="_blank">Egg Fruit/Canistel 蛋黄果</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/taro" target="_blank">Elephant Ear Yam/Taro‘象耳’芋头/芋头</a></p>
-         <p><a href="docs/false.jpg" target="_blank">False turf lily 麦冬</a></p>
-         <p><a href="docs/false daisy.png" target="_blank">False daisy 旱蓮草</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/fire-cracker-plant" target="_blank">Firecracker Plant 爆仗竹</a></p>
-         <p><a href="docs/Fish tail palm.png" target="_blank">Fishtail Palm 鱼尾葵</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/flame-torch-flower" target="_blank">Flame Torch Flower 水塔花</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/frangipani" target="_blank">Frangipani 鸡蛋花</a></p>
-         <p><a href="docs/Galangal.jpg" target="_blank">Galangal Blue ginger</a></p>
-       
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/green-chireta" target="_blank">Green Chireta 穿心莲</a></p>
-         <p><a href="docs/guava.jpg" target="_blank">Guava 番石榴</a></p>
-           <p><a href="docs/heliconia.jpg" target="_blank">Heliconia 赫蕉</a></p>
-           <p><a href="docs/hibiscus.jpg" target="_blank">Hibiscus 大红花</a></p>     
-         
-        
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/impala-lily" target="_blank">Impala Lily/Desert Rose 沙漠玫瑰</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/inch-plant" target="_blank">Inch Plant, Wandering Jews 水龟草</a></p>
-           <p><a href="docs/indian borage.jpg" target="_blank">Indian borage 到手香</a></p>
-      <p><a href="docs/indian camp.jpg" target="_blank">Indian camphorweed 阔苞菊 </a></p>
-        
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/jamaican-cherry" target="_blank">Jamaica Cherry 文定果</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/jambu" target="_blank">Jambu 蓮霧</a></p>
-        
-         <p><a href="docs/jewels of opar.png" target="_blank">Jewel of Opar 土人参</a></p>
-      <p><a href="docs/lemon myrtle.png " target="_blank">Lemon myrtle 檸檬香桃</a></p>
-      <p><a href="docs/lemon sherbet.png " target="_blank">Lemon sherbet coleus 彩叶草</a></p>
-       <p><a href="docs/Lepidagathis cuspidata.png" target="_blank">Lepidagathis cuspidata  鳞花草属</a></p>
-          
-        <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/kaffir-lime" target="_blank">Kaffir Lime 卡菲尔酸橙</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/kangkong" target="_blank">Kang Kong 蕹菜</a></p>        
-              
-       
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/lime" target="_blank">Lime 酸柑</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/longan" target="_blank">Longan 龙眼</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/malabar-chestnut" target="_blank">Malabar Chestnut 马拉巴栗</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/malabar-melastoma" target="_blank">Malabar Melastoma 野牡丹</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/malabar-spinach" target="_blank">Malabar Spinach 帝皇苗</a></p>
-         <p><a href="docs/mango ginger.jpg">Mango Ginger</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mani-cai" target="_blank">Mani Cai/Star Gooseberry 马尼菜</a></p>
-        
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/marigold" target="_blank">Marigold 万寿菊</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/melinjo" target="_blank">Melinjo 倪藤</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mexican-petunia" target="_blank">Mexican Petunia 紫花芦莉草</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mexican-primrose-willow" target="_blank">Mexican Primrose willow 水丁香 </a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mexican-sunflower" target="_blank">Mexican Sunflower 墨西哥向日葵</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mimosa" target="_blank">Mimosa 含羞草</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/ming-aralia" target="_blank">Ming Aralia 裂叶福禄桐</a></p>
-           <p><a href="docs/ming fern.jpg" target="_blank">Ming fern 蓬萊松</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mint" target="_blank">Mint 薄荷叶</a></p>
-         
-         <p><a href="" target="_blank">Mother-in-Law Tongue 虎尾兰</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mugwort" target="_blank">Mugwort 艾草</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mulberry" target="_blank">Mulberry 桑树</a></p>
-        <p><a href="docs/noni.png" target="_blank">Noni Fruit Tree 檄树</a></p>
-         
-        <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/oil-palm-" target="_blank">Oil Palm 油棕</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/oldenlandia-corymbosa" target="_blank">Oldenlandia corymbosa 水线草</a></p>
-        <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/oyster-plant" target="_blank">Oyster Plant 红竹叶</a></p>
-        
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/palmer-amaranth" target="_blank">Palmar Amaranth 苋菜</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/pandan" target="_blank">Pandan 班兰叶</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/papaya" target="_blank">Papaya 木瓜</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/passion-fruit " target="_blank">Passion Fruit 百香果</a></p>
-          <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/paper-reed-" target="_blank">Papyrus 莎草纸</a></p>    
-        
-         <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/paper-reed-g" target="_blank">Philodendron 蔓绿绒</a></p>     
-             
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/pigeon-berry" target="_blank">Pigeon Berry 数珠珊瑚 </a></p>      
-                  
-       
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/piper-sarmentosum" target="_blank">Piper sarmentosum 假蒟 </a></p>
-          <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/pomelo"target="_blank">Pomelo 柚子</a></p> 
-       <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/pricky-pear-cactus"target="_blank">Prickly Pear Cactus 仙人掌</a></p>
-         <p><a href=" docs/true yam.png" target="_blank">Purple Yam, True yam 参薯</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/purslance"target="_blank">Purslane 马齿苋</a></p>
-         
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/quail-grass" target="_blank">Quail Grass 青葙</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/rain-lily" target="_blank">Rain Lily 玉帘</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/rattlepods " target="_blank">Rattlepod  猪屎豆</a></p>
-         <p><a href=" docs/Red button ginger.png" target="_blank">Red button ginger 红宝塔姜</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/red-hot-cattail" target="_blank">Red Hot Cat’s Tail 红橞铁苋菜</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/redbird-flower" target="_blank">Redbird Flower 红雀珊瑚</a></p>
-          <p><a href="docs/rose cactus.jpg" target="_blank">Rose Cactus 七星针</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/rubber-fig" target="_blank">Rubber fig  印度榕</a></p>
-         
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/sabah-snake-grass" target="_blank">Sabah Snake Grass 忧遁草</a></p>
-      <p><a href="docs/sago palm.png" target="_blank">Sago palm 苏铁</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/salvinia" target="_blank">Salvania 槐叶萍</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/sansevieria-canaliculatasansevieria-canaliculata" target="_blank">Sansevieria Canaliculata 棒叶老虎尾</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/santol" target="_blank">Santol 山陀儿</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/selaginella" target="_blank">Selaginella Tamariscina 卷柏</a></p>
-         <p><a href=" docs/sessile.jpg" target="_blank">Sessile joyweed 红田乌</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/shoebutton-ardisia" target="_blank">Shoebutton Ardisia 兰屿树杞</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/shampoo-ginger" target="_blank">Shampoo ginger 红球姜</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/singapore-holly" target="_blank">Singapore holly 金虎尾</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/song-of-india-" target="_blank">Song of India 百合竹</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/soursop" target="_blank">Soursop 红毛榴莲</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/spiked-pepper" target="_blank">Spiked pepper Matico 树胡椒</a></p>
-        <p><a href="docs/stinky passionflower.png " target="_blank">Stinky passionflower 毛西番莲 </a></p>
-        
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/stink-vine" target="_blank">Stinkvine 鸡屎藤</a></p>
-        <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/stonebreaker-plant" target="_blank">Stonebreaker plant  珍珠草</a></p>
-                
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/sunn-hemp" target="_blank">Sunn Hemp 菽麻</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/sweet-potato" target="_blank">Sweet Potato 番薯</a></p>
-         
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/tarragon" target="_blank">Tarragon 龙蒿</a></p>
-             <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/land-cress" target="_blank">Thai Land Cress 土芹 </a></p>
-          <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/thornless-crown-of-thorns" target="_blank">Thornless crown of thorns 无刺麒麟花 </a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/pine"target="_blank">Thuja 松</a></p>
-          <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/torch-ginger" target="_blank">Torch Ginger 火炬姜</a></p>
-    <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/tricolor-dwarf-oyster-plant" target="_blank">Tricolour Dwarf Oyster Plant 三色龙血树</a></p>
-      
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/turkey-berry" target="_blank">Turkey Berry 水茄</a></p>
-          <p><a href="docs/turmeric.jpg">Turmeric Plant 姜黄</a></p>
-         <p><a href="docs/twelve melastoma.jpg" target="_blank">Twelve Stamen Melastoma 野牡丹</a></p>
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/veld-grape-plant" target="_blank">Veld Grape Plant 翡翠阁 </a></p>
-                 
-         <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/water-lily" target="_blank">Water Lily 睡莲</a></p>
-         <p><a href="docs/wishbone.jpg">Wishbone Flower兰猪耳</a></p>
-      <p><a href="docs/yellow bells.png " target="_blank">Yellow Bells黄钟花</a></p>
-          
-        <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/zanzibar-gem" target="_blank">Zanzibar Gem 金钱树</a></p>
-          
+            <p><a href="docs/achiote.png" target="_blank">Achiote, Lipstick Tree 红木</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/aleo-vera" target="_blank">Aloe Vera 芦荟</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/amazon-blue" target="_blank">Amazon Blue 蓝金花 </a></p>          
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/areca" target="_blank">Areca 散尾葵</a></p>  
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/asian-pigeon-wings" target="_blank">Asian pigeon wings 蝶豆花</a></p>       
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/asian-broom-grass" target="_blank">Asian Broom Grass 蝶豆花</a></p>
+            <p><a href="docs/balloon.png " target="_blank">Balloon Vine 倒地铃</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/balsam" target="_blank">Balsam 凤仙花</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/banana" target="_blank">Banana 香蕉</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/banana" target="_blank">Bandicoot berry /Leea Indica 火筒树</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/barbados-lily" target="_blank">Barbados Lily 鹤顶红</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/basil" target="_blank">Basil 九层塔</a></p>
+            <p><a href="docs/basket plant.png " target="_blank">Basket plant 白纹香锦竹草</a></p>
+            <p><a href="docs/beggarticks.png" target="_blank">Beggarticks 白花鬼针草</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/begonia" target="_blank">Begonia 秋海棠</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/betel-leaves" target="_blank">Betel Leaf 槟榔叶</a></p>
+            <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/south-african-leaf" target="_blank">Bitter Leaf 南非叶</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/black-aralia" target="_blank">Black Aralia 银边南洋参</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/black-face-general" target="_blank">Black face general  黑面将军 </a></p>     
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/black-turmeric" target="_blank">Black turmeric 黑姜黄</a></p>
+            <p><a href="docs/Bloodleaf.png " target="_blank">Bloodleaf 血苋 </a></p>
+            <p><a href="docs/blue porterweed.png" target="_blank">Blue Porterweed假马鞭</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/blue-pussy-leaf" target="_blank">Blue pussy leaf 瘤子草</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/bourgainvillea" target="_blank">Bougainvillea 九重葛</a></p>
+            <p><a href="docs/buddha new.png " target="_blank">Buddha's Belly 佛肚树 </a></p>
+            <p><a href="docs/coral.jpg " target="_blank">coral vine 珊瑚藤 </a></p>
+            <p><a href="docs/butterfly ginger lily.jpg" target="_blank">Butterfly Ginger Lily 姜/姜花</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/candle-bush" target="_blank">Candle Bush 翅果铁刀木</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/cardboard-palm" target="_blank">Cardboard Palm 美叶苏铁</a></p>
+            <p><a href="docs/cashew.png" target="_blank">Cashew 腰果</a></p>
+            <p><a href="docs/cassava.png" target="_blank">Cassava 木薯</a></p>
+            <p><a href="docs/cat whisker.jpg" target="_blank">Cat's Whiskers Flower 猫薄荷</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/celosia" target="_blank">Celosia 蓝金花 </a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/chiku" target="_blank">Chiku Sapodilla 人心果</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/chinese-banyan" target="_blank">Chinese Banyan 细叶榕</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/chinese-chaste-tree" target="_blank">Chinese chaste tree 黄荆</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/chinese-evergreen" target="_blank">Chinese Evergreen 粗肋草</a></p>
+            <p><a href="docs/chinese knotweed.png" target="_blank">Chinese knotweed 何首乌 </a></p> 
+            <p><a href="docs/chinese rain bell.jpg" target="_blank">Chinese rain bell 南板蓝根</a></p>
+            <p><a href="docs/chinese violet.jpg" target="_blank">Chinese Violet 宽叶十万错</a></p>   
+            <p><a href="docs/chives.jpg" target="_blank">Chives 韭菜</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/citronella" target="_blank">Citronella 亚香茅</a></p>    
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/coffee" target="_blank">Coffee Liberica 大果咖啡</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/coleus" target="_blank">Coleus 鞘蕊</a></p>
+            <p><a href="docs/colocasia pink china.png" target="_blank">Colocasia pink china 粉红中国芋</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/ulam-raja-" target="_blank">Cosmos, Ulam Raja 帝皇乌蓝 </a></p>
+            <p><a href="docs/crepe ginger flower.jpg " target="_blank">Crepe ginger </a></p>
+            <p><a href="docs/culantro.jpg" target="_blank">Culantro 刺芹</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/curry-tree" target="_blank">Curry Leaves 咖喱叶 </a></p>
+            <p><a href="docs/groundcherry.png" target="_blank">Cutleaf Groundcherry 苦蘵</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/dayak-onion" target="_blank">Dayak Onion 红葱</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/dinner-plate-aralia" target="_blank">Dinner Plate Aralia 圆叶南洋参 </a></p>
+            <p><a href="docs/dog.png" target="_blank">Dog Fennel 假蒿</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/song-of-india-" target="_blank">Dracaena 龙血树</a></p>
+            <p><a href="docs/dumb.png" target="_blank">Dumb Cane 花叶万年青</a></p>
+            <p><a href="docs/canistel.jpg" target="_blank">Egg Fruit/Canistel 蛋黄果</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/taro" target="_blank">Elephant Ear Yam/Taro'象耳'芋头/芋头</a></p>
+            <p><a href="docs/false.jpg" target="_blank">False turf lily 麦冬</a></p>
+            <p><a href="docs/false daisy.png" target="_blank">False daisy 旱蓮草</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/fire-cracker-plant" target="_blank">Firecracker Plant 爆仗竹</a></p>
+            <p><a href="docs/Fish tail palm.png" target="_blank">Fishtail Palm 鱼尾葵</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/flame-torch-flower" target="_blank">Flame Torch Flower 水塔花</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/frangipani" target="_blank">Frangipani 鸡蛋花</a></p>
+            <p><a href="docs/Galangal.jpg" target="_blank">Galangal Blue ginger</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/green-chireta" target="_blank">Green Chireta 穿心莲</a></p>
+            <p><a href="docs/guava.jpg" target="_blank">Guava 番石榴</a></p>
+            <p><a href="docs/heliconia.jpg" target="_blank">Heliconia 赫蕉</a></p>
+            <p><a href="docs/hibiscus.jpg" target="_blank">Hibiscus 大红花</a></p>     
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/impala-lily" target="_blank">Impala Lily/Desert Rose 沙漠玫瑰</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/inch-plant" target="_blank">Inch Plant, Wandering Jews 水龟草</a></p>
+            <p><a href="docs/indian borage.jpg" target="_blank">Indian borage 到手香</a></p>
+            <p><a href="docs/indian camp.jpg" target="_blank">Indian camphorweed 阔苞菊 </a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/jamaican-cherry" target="_blank">Jamaica Cherry 文定果</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/jambu" target="_blank">Jambu 蓮霧</a></p>
+            <p><a href="docs/jewels of opar.png" target="_blank">Jewel of Opar 土人参</a></p>
+            <p><a href="docs/lemon myrtle.png " target="_blank">Lemon myrtle 檸檬香桃</a></p>
+            <p><a href="docs/lemon sherbet.png " target="_blank">Lemon sherbet coleus 彩叶草</a></p>
+            <p><a href="docs/Lepidagathis cuspidata.png" target="_blank">Lepidagathis cuspidata  鳞花草属</a></p>
+            <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/kaffir-lime" target="_blank">Kaffir Lime 卡菲尔酸橙</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/kangkong" target="_blank">Kang Kong 蕹菜</a></p>        
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/lime" target="_blank">Lime 酸柑</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/longan" target="_blank">Longan 龙眼</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/malabar-chestnut" target="_blank">Malabar Chestnut 马拉巴栗</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/malabar-melastoma" target="_blank">Malabar Melastoma 野牡丹</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/malabar-spinach" target="_blank">Malabar Spinach 帝皇苗</a></p>
+            <p><a href="docs/mango ginger.jpg">Mango Ginger</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mani-cai" target="_blank">Mani Cai/Star Gooseberry 马尼菜</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/marigold" target="_blank">Marigold 万寿菊</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/melinjo" target="_blank">Melinjo 倪藤</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mexican-petunia" target="_blank">Mexican Petunia 紫花芦莉草</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mexican-primrose-willow" target="_blank">Mexican Primrose willow 水丁香 </a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mexican-sunflower" target="_blank">Mexican Sunflower 墨西哥向日葵</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mimosa" target="_blank">Mimosa 含羞草</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/ming-aralia" target="_blank">Ming Aralia 裂叶福禄桐</a></p>
+            <p><a href="docs/ming fern.jpg" target="_blank">Ming fern 蓬萊松</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mint" target="_blank">Mint 薄荷叶</a></p>
+            <p><a href="" target="_blank">Mother-in-Law Tongue 虎尾兰</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mugwort" target="_blank">Mugwort 艾草</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/mulberry" target="_blank">Mulberry 桑树</a></p>
+            <p><a href="docs/noni.png" target="_blank">Noni Fruit Tree 檄树</a></p>
+            <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/oil-palm-" target="_blank">Oil Palm 油棕</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/oldenlandia-corymbosa" target="_blank">Oldenlandia corymbosa 水线草</a></p>
+            <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/oyster-plant" target="_blank">Oyster Plant 红竹叶</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/palmer-amaranth" target="_blank">Palmar Amaranth 苋菜</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/pandan" target="_blank">Pandan 班兰叶</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/papaya" target="_blank">Papaya 木瓜</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/passion-fruit " target="_blank">Passion Fruit 百香果</a></p>
+            <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/paper-reed-" target="_blank">Papyrus 莎草纸</a></p>    
+            <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/paper-reed-g" target="_blank">Philodendron 蔓绿绒</a></p>     
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/pigeon-berry" target="_blank">Pigeon Berry 数珠珊瑚 </a></p>      
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/piper-sarmentosum" target="_blank">Piper sarmentosum 假蒟 </a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/pomelo"target="_blank">Pomelo 柚子</a></p> 
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/pricky-pear-cactus"target="_blank">Prickly Pear Cactus 仙人掌</a></p>
+            <p><a href=" docs/true yam.png" target="_blank">Purple Yam, True yam 参薯</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/purslance"target="_blank">Purslane 马齿苋</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/quail-grass" target="_blank">Quail Grass 青葙</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/rain-lily" target="_blank">Rain Lily 玉帘</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/rattlepods " target="_blank">Rattlepod  猪屎豆</a></p>
+            <p><a href=" docs/Red button ginger.png" target="_blank">Red button ginger 红宝塔姜</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/red-hot-cattail" target="_blank">Red Hot Cat's Tail 红橞铁苋菜</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/redbird-flower" target="_blank">Redbird Flower 红雀珊瑚</a></p>
+            <p><a href="docs/rose cactus.jpg" target="_blank">Rose Cactus 七星针</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/rubber-fig" target="_blank">Rubber fig  印度榕</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/sabah-snake-grass" target="_blank">Sabah Snake Grass 忧遁草</a></p>
+            <p><a href="docs/sago palm.png" target="_blank">Sago palm 苏铁</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/salvinia" target="_blank">Salvania 槐叶萍</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/sansevieria-canaliculatasansevieria-canaliculata" target="_blank">Sansevieria Canaliculata 棒叶老虎尾</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/santol" target="_blank">Santol 山陀儿</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/selaginella" target="_blank">Selaginella Tamariscina 卷柏</a></p>
+            <p><a href=" docs/sessile.jpg" target="_blank">Sessile joyweed 红田乌</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/shoebutton-ardisia" target="_blank">Shoebutton Ardisia 兰屿树杞</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/shampoo-ginger" target="_blank">Shampoo ginger 红球姜</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/singapore-holly" target="_blank">Singapore holly 金虎尾</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/song-of-india-" target="_blank">Song of India 百合竹</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/soursop" target="_blank">Soursop 红毛榴莲</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/spiked-pepper" target="_blank">Spiked pepper Matico 树胡椒</a></p>
+            <p><a href="docs/stinky passionflower.png " target="_blank">Stinky passionflower 毛西番莲 </a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/stink-vine" target="_blank">Stinkvine 鸡屎藤</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/stonebreaker-plant" target="_blank">Stonebreaker plant  珍珠草</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/sunn-hemp" target="_blank">Sunn Hemp 菽麻</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/sweet-potato" target="_blank">Sweet Potato 番薯</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/tarragon" target="_blank">Tarragon 龙蒿</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/land-cress" target="_blank">Thai Land Cress 土芹 </a></p>
+            <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/thornless-crown-of-thorns" target="_blank">Thornless crown of thorns 无刺麒麟花 </a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/pine"target="_blank">Thuja 松</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/torch-ginger" target="_blank">Torch Ginger 火炬姜</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/tricolor-dwarf-oyster-plant" target="_blank">Tricolour Dwarf Oyster Plant 三色龙血树</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/turkey-berry" target="_blank">Turkey Berry 水茄</a></p>
+            <p><a href="docs/turmeric.jpg">Turmeric Plant 姜黄</a></p>
+            <p><a href="docs/twelve melastoma.jpg" target="_blank">Twelve Stamen Melastoma 野牡丹</a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/veld-grape-plant" target="_blank">Veld Grape Plant 翡翠阁 </a></p>
+            <p><a href="https://farmyishun.wixsite.com/herbs-yishun/items-1-1/water-lily" target="_blank">Water Lily 睡莲</a></p>
+            <p><a href="docs/wishbone.jpg">Wishbone Flower兰猪耳</a></p>
+            <p><a href="docs/yellow bells.png " target="_blank">Yellow Bells黄钟花</a></p>
+            <p><a href=" https://farmyishun.wixsite.com/herbs-yishun/items-1-1/zanzibar-gem" target="_blank">Zanzibar Gem 金钱树</a></p>
         </nav>
 
-    <!-- Main Section -->
-    <section>
-       <!-- <article>
-          <h2>Article 1</h2>
-          <p>This is the first article.</p>
-        </article>
-        -->
-     <article>
-     
-     <div class="image-container">
-     <img src="docs/health.png " alt="Achiote aka Lipstick Tree">  
-       
-    <!-- color of text font inside html code. font-weight: bold is retined but deleted for Nav heading -->
-         <p style="color: yellow;font-size: 25px; font-weight: bold;"> Using herbs to improve health </p>
-       
-       <h2><a href="docs/cancer.pdf" target="_blank">cancer</a></h2><br>        
-       <h2><a href="docs/ent.png" target="_blank">Ent : Ears, nose and   throat</a></h2><br>
-       <h2><a href="docs/haematological.pdf" target="_blank">haematological blood</a></h2><br> 
-       <h2><a href="docs/Infection.png" target="_blank">Infection</a></h2><br>
-       <h2><a href="docs/Inflamatory.png" target="_blank">Inflamatory and immune system </a></h2><br> 
-       <h2><a href="docs/metabolic.pdf" target="_blank">Metabolic and endocrine</a></h2><br>
-       <h2><a href="docs/musculoskeletal.png" target="_blank">Musculoskeletal</a></h2><br>
-       <h2><a href="docs/oral.png" target="_blank">Oral and gastrointestinal</a></h2><br>
-       <h2><a href="docs/organ.pdf" target="_blank">Organ system</a></h2><br>
-       <h2><a href="docs/renal.png" target="_blank">Renal and urigenital</a></h2><br>
-       <h2><a href="docs/respiratory.png" target="_blank">Respiratory</a></h2><br>
-      <h2><a href="docs/skin.png" target="_blank">Skin</a></h2><br>
-        
-      
-      
-     <!--<p style="color: yellow;font-size: 25px; font-weight: bold;">  
-     This is the first article.</p> -->
-    
-</article>
+        <!-- Main Section -->
+        <section>
+            <article>
+                <div class="image-container">
+                    <img src="docs/health.png " alt="Achiote aka Lipstick Tree">  
+                </div>
+               
+                <p style="color: var(--primary-green);font-size: 25px; font-weight: bold;"> Using herbs to improve health </p>
+               
+                <h2><a href="docs/cancer.pdf" target="_blank">cancer</a></h2><br>        
+                <h2><a href="docs/ent.png" target="_blank">Ent : Ears, nose and   throat</a></h2><br>
+                <h2><a href="docs/haematological.pdf" target="_blank">haematological blood</a></h2><br> 
+                <h2><a href="docs/Infection.png" target="_blank">Infection</a></h2><br>
+                <h2><a href="docs/Inflamatory.png" target="_blank">Inflamatory and immune system </a></h2><br> 
+                <h2><a href="docs/metabolic.pdf" target="_blank">Metabolic and endocrine</a></h2><br>
+                <h2><a href="docs/musculoskeletal.png" target="_blank">Musculoskeletal</a></h2><br>
+                <h2><a href="docs/oral.png" target="_blank">Oral and gastrointestinal</a></h2><br>
+                <h2><a href="docs/organ.pdf" target="_blank">Organ system</a></h2><br>
+                <h2><a href="docs/renal.png" target="_blank">Renal and urigenital</a></h2><br>
+                <h2><a href="docs/respiratory.png" target="_blank">Respiratory</a></h2><br>
+                <h2><a href="docs/skin.png" target="_blank">Skin</a></h2><br>
+            </article>
 
-        <!--
-        <article>
-            <h2><div class="image-container">
-        <img src="Jewel of opar.jpg" alt="Achiote aka Lipstick Tree">
-        <h1 class="overlay-text">Welcome to the herb garden<br> Please enter</h1>
-    </div</h2>
-            <p>This is the second article.</p>
-        </article>
-        -->
-        <!-- Make the button disappeared by not running the codes just below -->
-     <!-- <button>
-            <h2>Button</h2>
-  <a href="https://www.jalanow.com/johor-singapore-live-traffic-cam.htm "       class=" button">Click Here</a>
-      </button>
-      -->
-        
-       <p style="color:red;font-size: 15px; font-weight: bold;">Disclaimer: The content in this site is for information purposes only .
-        Please consult a medical professional for  your medical needs. All rights reserved. </p>
-    </section>
+            <p style="color:red;font-size: 15px; font-weight: bold;">Disclaimer: The content in this site is for information purposes only . Please consult a medical professional for  your medical needs. All rights reserved. </p>
+        </section>
+    </div>
 
-    <!-- Footer -->
-    <!--<footer>
-        <p>Footer Content</p>
-    </footer> -->
-<!-- This script help to activate a search when a text is entered in the Search box after pressing enter. It is JS used for dynamic
-    action in html -->
- 
- <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const searchInput = document.getElementById("search-input");
-    const searchButton = document.getElementById("search-button");
-    let previousMatches = []; // Store previous matches for refinement
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("search-input");
+            const searchButton = document.getElementById("search-button");
+            let previousMatches = [];
 
-    function runSearch() {
-        const searchQuery = searchInput.value.toLowerCase().trim();
-        const links = document.querySelectorAll("nav p a");
-        const currentMatches = [];
+            function runSearch() {
+                const searchQuery = searchInput.value.toLowerCase().trim();
+                const links = document.querySelectorAll("nav p a");
+                const currentMatches = [];
 
-        // Find all matching links
-        for (let link of links) {
-            const linkText = link.textContent.toLowerCase();
-            if (linkText.includes(searchQuery)) {
-                currentMatches.push({
-                    text: link.textContent,
-                    href: link.href
-                });
+                for (let link of links) {
+                    const linkText = link.textContent.toLowerCase();
+                    if (linkText.includes(searchQuery)) {
+                        currentMatches.push({
+                            text: link.textContent,
+                            href: link.href
+                        });
+                    }
+                }
+
+                if (currentMatches.length === 0) {
+                    alert("No matching link found");
+                    previousMatches = [];
+                    return;
+                }
+
+                if (currentMatches.length === 1) {
+                    window.open(currentMatches[0].href, "_blank");
+                    previousMatches = [];
+                    return;
+                }
+
+                if (previousMatches.length > 0) {
+                    const exactMatch = currentMatches.find(match => 
+                        match.text.toLowerCase() === searchQuery
+                    );
+                    if (exactMatch) {
+                        window.open(exactMatch.href, "_blank");
+                        previousMatches = [];
+                        return;
+                    }
+                }
+
+                alert(`Multiple matches found. Refine your search from:\n${currentMatches.map(m => m.text).join("\n")}`);
+                previousMatches = currentMatches;
             }
-        }
 
-        // Case 1: No matches found
-        if (currentMatches.length === 0) {
-            alert("No matching link found");
-            previousMatches = []; // Reset stored matches
-            return;
-        }
+            searchButton.addEventListener("click", runSearch);
 
-        // Case 2: Only one match → open it immediately
-        if (currentMatches.length === 1) {
-            window.open(currentMatches[0].href, "_blank");
-            previousMatches = []; // Reset stored matches
-            return;
-        }
+            searchInput.addEventListener("keydown", function (event) {
+                if (event.key === "Enter") {
+                    runSearch();
+                }
+            });
+        });
+    </script>
 
-        // Case 3: Multiple matches → check if refining a previous search
-        if (previousMatches.length > 0) {
-            const exactMatch = currentMatches.find(match => 
-                match.text.toLowerCase() === searchQuery
-            );
-            if (exactMatch) {
-                window.open(exactMatch.href, "_blank");
-                previousMatches = []; // Reset after opening
-                return;
-            }
-        }
-
-        // Case 4: Show multiple matches and store them
-        alert(`Multiple matches found. Refine your search from:\n${currentMatches.map(m => m.text).join("\n")}`);
-        previousMatches = currentMatches; // Store for next search
-    }
-
-    // Search on button click
-    searchButton.addEventListener("click", runSearch);
-
-    // Search on Enter key
-    searchInput.addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-            runSearch();
-        }
-    });
-}); 
- 
-</script>         
-
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>; 
-
-   <script>
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("search-button").addEventListener("click", function () {
-        let searchQuery = document.getElementById("search-input").value.toLowerCase(); // Get and convert input to lowercase
-        let links = document.querySelectorAll("nav p a"); // Select all links inside nav
-        
-        for (let link of links) {
-            let linkText = link.textContent.toLowerCase(); // Get link text
-            
-            if (linkText.includes(searchQuery)) { 
-                window.open(link.href, "_blank"); // Open the matched link
-                return; // Exit loop after finding a match
-            }
-        }
-        alert("No matching link found"); // Alert if no match is found
-    });
-});
-</script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>  
+</html>
+
+
  
 
 
